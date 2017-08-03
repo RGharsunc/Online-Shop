@@ -16,11 +16,5 @@ import java.util.List;
 
 public interface CarouselRepository extends JpaRepository<Carousel, Long> {
 
-//
-//    @Modifying(clearAutomatically = true)
-//    @Transactional
-//    @Query("update Carousel car set car.=:qView where product.id=:qId")
-//    int updateProduct(@Param("qView") long view, @Param("qId") long id);
-
 
 }

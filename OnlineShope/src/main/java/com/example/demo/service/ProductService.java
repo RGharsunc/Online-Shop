@@ -10,8 +10,13 @@ import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.xml.crypto.KeySelector;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,4 +94,21 @@ public class ProductService {
         productRepository.save(product);
     }
 
+    public Product fileUpload(Product product, MultipartFile image) throws IOException{
+        //file upload
+        File dir = new File("d:\\java");
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        //create the file on server
+        String productPic = System.currentTimeMillis() + "_" + image.getOriginalFilename();
+        File serverFile = new File(dir.getAbsolutePath() + "\\" + productPic);
+        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+        stream.write(image.getBytes());
+        stream.close();
+        product.setImage(productPic);
+        return product;
+
+
+    }
 }

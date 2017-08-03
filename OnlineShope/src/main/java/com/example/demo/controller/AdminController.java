@@ -28,24 +28,12 @@ public class AdminController {
     ProductService productService;
 
 
-
     @RequestMapping(value = "/admin/product/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("addProduct") Product product,
                              @RequestParam("img") MultipartFile image
     ) throws IOException {
-        //file upload
-        File dir = new File("d:\\java");
-        if (!dir.exists()) {
-            dir.mkdir();
-        }
-        //create the file on server
-        String productPic = System.currentTimeMillis() + "_" + image.getOriginalFilename();
-        File serverFile = new File(dir.getAbsolutePath() + "\\" + productPic);
-        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-        stream.write(image.getBytes());
-        stream.close();
-        product.setImage(productPic);
-        productService.addProduct(product);
+        Product productWithFile = productService.fileUpload(product, image);
+        productService.addProduct(productWithFile);
         return "redirect:/admin";
 
 

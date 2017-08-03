@@ -284,7 +284,7 @@
                         </div>
 
                         <div class="form-group col-md-12">
-                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Add Product">
+                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Add Slider">
                         </div>
 
                     </form:form>

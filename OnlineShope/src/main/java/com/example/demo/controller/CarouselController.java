@@ -57,8 +57,7 @@ public class CarouselController {
                     carouselService.saveOrUpdateCarousel(carousel1);
                 }
 
-                carousel.setPosition(carouselService.getCarouselListOrderedByPosition()
-                        .get(0).getPosition()-1);
+                carousel.setPosition(carouselService.getCarouselListOrderedByPosition().get(0).getPosition()-1);
 
             } else {
                 carousel.setPosition(carouselService.getCarouselListOrderedByPosition().get(0).getPosition() - 1);
