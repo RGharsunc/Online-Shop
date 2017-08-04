@@ -1,13 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Brand;
+import com.example.demo.entity.Carousel;
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Product;
-import com.example.demo.entity.Purpose;
 import com.example.demo.service.BrandService;
+import com.example.demo.service.CarouselService;
 import com.example.demo.service.CategoryService;
 import com.example.demo.service.ProductService;
-import com.example.demo.service.PurposeServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,13 +25,13 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    CategoryService categoryService;
+    private CategoryService categoryService;
     @Autowired
-    ProductService productService;
+    private  ProductService productService;
     @Autowired
-    BrandService brandService;
+    private  BrandService brandService;
     @Autowired
-    PurposeServices purposeServices;
+    private  CarouselService carouselService;
 
 
     @RequestMapping(value = "/products/by/category/{id}")
@@ -41,12 +41,15 @@ public class ProductController {
         List<Category> categories = categoryService.getCategories();
         List<Product> products = productService.getProductsByCategoryId(id);
         List<Brand> brands = brandService.getBrandsList();
-        List<Purpose> purposes = purposeServices.getPurposeList();
+        List<Carousel> carousels = carouselService.getCarouselListOrderedByPosition();
 
-        modelMap.addAttribute("purposes", purposes);
+
+
+
         modelMap.addAttribute("brands", brands);
         modelMap.addAttribute("products", products);
         modelMap.addAttribute("categories", categories);
+        modelMap.addAttribute("carousels", carousels);
         return "index";
 
     }
@@ -55,14 +58,13 @@ public class ProductController {
     public String getProductById(@PathVariable("id") long id, ModelMap modelMap) {
 
 
-        productService.updateProductByViews(id);
+
         Product product = productService.getProductById(id);
         List<Category> categories = categoryService.getCategories();
         List<Product> productsNotSameId = productService.productsWhereIdIsNotLike(id);
-        List<Purpose> purposes = purposeServices.getPurposeList();
         List<Brand> brands = brandService.getBrandsList();
 
-        modelMap.addAttribute("purposes", purposes);
+
         modelMap.addAttribute("product", product);
         modelMap.addAttribute("categories", categories);
         modelMap.addAttribute("productsNotSameId", productsNotSameId);
@@ -75,33 +77,21 @@ public class ProductController {
         List<Product> products = productService.getProductsByBrandId(id);
         List<Category> categories = categoryService.getCategories();
         List<Brand> brands = brandService.getBrandsList();
-        List<Purpose> purposes = purposeServices.getPurposeList();
+        List<Carousel> carousels = carouselService.getCarouselListOrderedByPosition();
 
-        modelMap.addAttribute("purposes", purposes);
+
+        modelMap.addAttribute("carousels", carousels);
+
         modelMap.addAttribute("brands", brands);
         modelMap.addAttribute("products", products);
         modelMap.addAttribute("categories", categories);
         return "index";
     }
 
-    @RequestMapping(value = "/product/by/purpose/{id}")
-    public String getProductsByPurposeId(@RequestParam("id") long id, ModelMap modelMap) {
-
-        List<Category> categories = categoryService.getCategories();
-        List<Brand> brands = brandService.getBrandsList();
-        List<Purpose> purposes = purposeServices.getPurposeList();
-        List<Product> products = productService.getProductListByPurpose(id);
-
-        modelMap.addAttribute("categories", categories);
-        modelMap.addAttribute("brands", brands);
-        modelMap.addAttribute("purposes", purposes);
-        modelMap.addAttribute("products", products);
 
 
-        return "index";
 
 
-    }
 
     @RequestMapping(value = "/admin/product/delete")
     public String deleteProductFromAdmin(@RequestParam("prodName") String prodName) {

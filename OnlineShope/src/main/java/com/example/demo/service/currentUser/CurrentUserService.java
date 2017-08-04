@@ -5,5 +5,5 @@ package com.example.demo.service.currentUser;
  */
 public interface CurrentUserService {
 
-    //meji methodn ura?
+
 }

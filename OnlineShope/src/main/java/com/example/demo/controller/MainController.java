@@ -17,15 +17,13 @@ public class MainController {
 
 
     @Autowired
-    ProductService productService;
+  private  ProductService productService;
     @Autowired
-    CategoryService categoryService;
+    private  CategoryService categoryService;
     @Autowired
-    BrandService brandService;
+    private BrandService brandService;
     @Autowired
-    PurposeServices purposeServices;
-    @Autowired
-    CarouselService carouselService;
+    private CarouselService carouselService;
 
     @RequestMapping(value = "/")
     public String main(ModelMap modelMap) {
@@ -33,19 +31,13 @@ public class MainController {
         List<Product> products = productService.getAllProductsList();
         List<Category> categories = categoryService.getAllCategoriesList();
         List<Brand> brands = brandService.getBrandsList();
-        List<Purpose> purposes = purposeServices.getPurposeList();
         List<Carousel> carousels = carouselService.getCarouselListOrderedByPosition();
 
-        long id = purposes.get(0).getId();
-        List<Product> productListByPurpose = productService.getProductListByPurpose(id);
 
-
-        modelMap.addAttribute("purposes", purposes);
         modelMap.addAttribute("brands", brands);
         modelMap.addAttribute("products", products);
         modelMap.addAttribute("categories", categories);
-        modelMap.addAttribute("productListByPurpose", productListByPurpose);
-        modelMap.addAttribute("carousels",carousels);
+        modelMap.addAttribute("carousels", carousels);
 
         return "index";
     }
@@ -76,13 +68,12 @@ public class MainController {
         List<Product> products = productService.getProductsList();
         List<Category> categories = categoryService.getCategories();
         List<Brand> brands = brandService.getBrandsList();
-        List<Purpose> purposes = purposeServices.getPurposeList();
 
 
         modelMap.addAttribute("products", products);
         modelMap.addAttribute("categories", categories);
         modelMap.addAttribute("brands", brands);
-        modelMap.addAttribute("purposes", purposes);
+
         return "product-details";
     }
 
@@ -97,10 +88,6 @@ public class MainController {
         return "cart";
     }
 
-//    @RequestMapping(value = "/LOGIN")
-//    public String toLogin() {
-//        return "login";
-//    }
 
     @RequestMapping(value = "/blog")
     public String toBlog() {
@@ -128,14 +115,13 @@ public class MainController {
         List<Product> products = productService.getAllProductsList();
         List<Category> categories = categoryService.getAllCategoriesList();
         List<Brand> brands = brandService.getBrandsList();
-        List<Purpose> purposes = purposeServices.getPurposeList();
         List<Carousel> carousels = carouselService.getCarouselListOrderedByPosition();
 
-        modelMap.addAttribute("purposes", purposes);
+
         modelMap.addAttribute("brands", brands);
         modelMap.addAttribute("products", products);
         modelMap.addAttribute("categories", categories);
-        modelMap.addAttribute("carousels",carousels);
+        modelMap.addAttribute("carousels", carousels);
         return "admin";
     }
 

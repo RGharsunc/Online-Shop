@@ -171,12 +171,10 @@
                                 <h1><span>${carousels.get(0).logoText1}</span>-${carousels.get(0).logoText2}</h1>
                                 <h2>${carousels.get(0).header}</h2>
                                 <p>${carousels.get(0).description} </p>
-                                <%--<button type="button" class="btn btn-default get">Get it now</button>--%>
                             </div>
                             <div class="col-sm-6">
-                                <img src="/getImage?filename=${carousels.get(0).image1}" class="girl img-responsive"
-                                     alt=""/>
-                                <img src="getImage?filename=${carousels.get(0).image2}" class="pricing" alt=""/>
+                                <img src="/getImage?filename=${carousels.get(0).image1}" class="girl img-responsive" alt=""/>
+                                <img src="/getImage?filename=${carousels.get(0).image2}" class="pricing" alt=""/>
                             </div>
                         </div>
 

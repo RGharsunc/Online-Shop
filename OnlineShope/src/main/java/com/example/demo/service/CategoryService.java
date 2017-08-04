@@ -1,14 +1,12 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Category;
-import com.example.demo.entity.Product;
+
 import com.example.demo.repository.CategoryRepository;
-import com.example.demo.repository.ProductRepository;
-import com.example.demo.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 
 import java.util.List;
 
@@ -19,7 +17,7 @@ import java.util.List;
 public class CategoryService {
 
     @Autowired
-    CategoryRepository categoryRepository;
+  private  CategoryRepository categoryRepository;
 
 
     public List<Category>  getCategories(){

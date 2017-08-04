@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Carousel;
-import com.example.demo.repository.CarouselRepository;
+
 import com.example.demo.service.CarouselService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +24,7 @@ import java.util.List;
 @Controller
 public class CarouselController {
     @Autowired
-    CarouselService carouselService;
+    private CarouselService carouselService;
 
     @RequestMapping(value = "/admin/carousel/add", method = RequestMethod.POST)
     public String addCarousel(@ModelAttribute("carousel") Carousel carousel,

@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Role;
+
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 
 @Autowired
-    UserService userService;
+private UserService userService;
 
 @RequestMapping(value = "/user/register", method = RequestMethod.POST)
 public String addUser(@ModelAttribute User user){
-//    user.setRole(Role.USER);
     userService.addUser(user);
     return "redirect:/";
 }

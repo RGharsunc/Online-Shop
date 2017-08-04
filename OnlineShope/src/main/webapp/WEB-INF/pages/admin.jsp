@@ -63,11 +63,8 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <%--<li><a href="#"><i class="fa fa-user"></i> Account</a></li>--%>
-                            <%--<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>--%>
                             <li><a href="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <%--<li><a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>--%>
-                            <%--<li><a href="/LOGIN"><i class="fa fa-lock"></i> Login</a></li>--%>
+
                         </ul>
                     </div>
                 </div>
@@ -94,7 +91,6 @@
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="/products">Products</a></li>
-                                    <%--<li><a href="product-details">Product Details</a></li>--%>
                                     <li><a href="/checkout">Checkout</a></li>
                                     <li><a href="/cart">Cart</a></li>
                                     <li><a href="/LOGIN">Login</a></li>
@@ -229,11 +225,7 @@
                     </form:form>
 
 
-
-
-                                                <%--ADD CAROUSEL--%>
-
-
+                    <%--ADD CAROUSEL--%>
 
 
                     <form:form id="main-contact-form" class="contact-form row" name="carousel" method="post"
@@ -262,12 +254,12 @@
                         </div>
 
                         <div class="form-group col-md-12">
-                            <input type="file"  name="img1" class="form-control">
+                            <input type="file" name="img1" class="form-control">
                         </div>
 
 
                         <div class="form-group col-md-12">
-                            <input type="file"  name="img2" class="form-control">
+                            <input type="file" name="img2" class="form-control">
                         </div>
 
 
@@ -288,14 +280,6 @@
                         </div>
 
                     </form:form>
-
-
-
-
-
-
-
-
 
 
                 </div>
@@ -369,66 +353,6 @@
                         </div>
 
                     </form:form><br>
-
-                    <%--UPDATE CAROUSEL--%>
-
-
-                    <%--<form:form id="main-contact-form" class="contact-form row" name="carousel" method="post"--%>
-                               <%--action="/admin/carousel/remove" enctype="multipart/form-data" role="form">--%>
-
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="text" name="logoText1" class="form-control" required="required"--%>
-                                   <%--placeholder="logoText1">--%>
-                        <%--</div>--%>
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="text" name="logoText2" class="form-control" required="required"--%>
-                                   <%--placeholder="logoText2">--%>
-                        <%--</div>--%>
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="text" name="header" class="form-control" required="required"--%>
-                                   <%--placeholder="header">--%>
-                        <%--</div>--%>
-
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="text" name="description" class="form-control" required="required"--%>
-                                   <%--placeholder="description">--%>
-                        <%--</div>--%>
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="file" id="image1" name="imgage1" class="form-control">--%>
-                        <%--</div>--%>
-
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="file" id="image2" name="imgage2" class="form-control">--%>
-                        <%--</div>--%>
-
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<select name="categoryByCategoryId" class="form-control">--%>
-                                <%--<label for="category">choose the category for product</label>--%>
-                                <%--<c:forEach items="${carousels}" var="carousel">--%>
-                                    <%--<option value="${carousel.position}" id="carousel">${carousel.position}--%>
-                                    <%--</option>--%>
-                                <%--</c:forEach>--%>
-                            <%--</select>--%>
-                        <%--</div>--%>
-
-                        <%--<div class="form-group col-md-12">--%>
-                            <%--<input type="submit" name="submit" class="btn btn-primary pull-right" value="Add Product">--%>
-                        <%--</div>--%>
-
-                    <%--</form:form>--%>
-
-
-
-
-
-
                 </div>
             </div>
 

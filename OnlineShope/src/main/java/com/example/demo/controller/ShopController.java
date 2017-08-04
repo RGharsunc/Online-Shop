@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -22,11 +22,11 @@ public class ShopController {
 
 
     @Autowired
-    CategoryService categoryService;
+    private  CategoryService categoryService;
     @Autowired
-    ProductService productService;
+    private ProductService productService;
     @Autowired
-    BrandService brandService;
+    private  BrandService brandService;
 
     @RequestMapping(value = "/products")
     public String toShopJSP(ModelMap modelMap){

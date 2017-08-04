@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Brand;
-import com.example.demo.repository.BrandRepository;
+
 import com.example.demo.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BrandController {
 
     @Autowired
-    BrandService brandService;
+    private  BrandService brandService;
 
     @RequestMapping(value = "/admin/brand/add", method = RequestMethod.POST)
     public String addBrandFromAdmin(@ModelAttribute("addBrand") Brand brand) {

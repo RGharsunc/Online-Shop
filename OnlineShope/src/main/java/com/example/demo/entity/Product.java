@@ -17,15 +17,8 @@ public class Product  {
     private int quantity;
     private String condit;
     private String availability;
-    private long view;
     private Category categoryByCategoryId;
     private Brand brandByBrandId;
-    private Purpose purposeByPurposeId;
-
-
-
-
-
 
     @Id
     @Column(name = "id")
@@ -92,26 +85,11 @@ public class Product  {
     }
 
 
-    @Column(name = "view")
-    public long getView() {
-        return view;
-    }
-
-    public void setView(long view) {
-        this.view = view;
-    }
-
-
-
-
-
-
     @ManyToOne
     @JoinColumn(name = "brand_id", referencedColumnName = "id", nullable = false)
     public Brand getBrandByBrandId() {
         return brandByBrandId;
     }
-
     public void setBrandByBrandId(Brand brandByBrandId) {
         this.brandByBrandId = brandByBrandId;
     }
@@ -123,19 +101,8 @@ public class Product  {
         return categoryByCategoryId;
     }
 
-
     public void setCategoryByCategoryId(Category categoryByCategoryId) {
         this.categoryByCategoryId = categoryByCategoryId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "purpose_id", referencedColumnName = "id", nullable = false)
-    public Purpose getPurposeByPurposeId() {
-        return purposeByPurposeId;
-    }
-
-    public void setPurposeByPurposeId(Purpose purposeByPurposeIdr) {
-        this.purposeByPurposeId = purposeByPurposeIdr;
     }
 
 
@@ -149,10 +116,8 @@ public class Product  {
                 ", quantity=" + quantity +
                 ", condit='" + condit + '\'' +
                 ", availability='" + availability + '\'' +
-                ", view=" + view +
                 ", categoryByCategoryId=" + categoryByCategoryId +
                 ", brandByBrandId=" + brandByBrandId +
-                ", purposeByPurposeId=" + purposeByPurposeId +
                 '}';
     }
 
@@ -166,7 +131,6 @@ public class Product  {
         if (id != product.id) return false;
         if (Double.compare(product.price, price) != 0) return false;
         if (quantity != product.quantity) return false;
-        if (view != product.view) return false;
         if (prodName != null ? !prodName.equals(product.prodName) : product.prodName != null) return false;
         if (image != null ? !image.equals(product.image) : product.image != null) return false;
         if (condit != null ? !condit.equals(product.condit) : product.condit != null) return false;
@@ -174,9 +138,7 @@ public class Product  {
             return false;
         if (categoryByCategoryId != null ? !categoryByCategoryId.equals(product.categoryByCategoryId) : product.categoryByCategoryId != null)
             return false;
-        if (brandByBrandId != null ? !brandByBrandId.equals(product.brandByBrandId) : product.brandByBrandId != null)
-            return false;
-        return purposeByPurposeId != null ? purposeByPurposeId.equals(product.purposeByPurposeId) : product.purposeByPurposeId == null;
+        return brandByBrandId != null ? brandByBrandId.equals(product.brandByBrandId) : product.brandByBrandId == null;
     }
 
     @Override
@@ -191,13 +153,10 @@ public class Product  {
         result = 31 * result + quantity;
         result = 31 * result + (condit != null ? condit.hashCode() : 0);
         result = 31 * result + (availability != null ? availability.hashCode() : 0);
-        result = 31 * result + (int) (view ^ (view >>> 32));
+
         result = 31 * result + (categoryByCategoryId != null ? categoryByCategoryId.hashCode() : 0);
         result = 31 * result + (brandByBrandId != null ? brandByBrandId.hashCode() : 0);
-        result = 31 * result + (purposeByPurposeId != null ? purposeByPurposeId.hashCode() : 0);
         return result;
     }
-
-
 }
 
