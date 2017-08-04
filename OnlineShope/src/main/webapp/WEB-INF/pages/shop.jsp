@@ -121,18 +121,12 @@
                             <li class="dropdown"><a href="#" class="active">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="/shop" class="active">Products</a></li>
-                                    <%--<li><a href="product-details.html">Product Details</a></li>--%>
                                     <li><a href="/checkout">Checkout</a></li>
                                     <li><a href="/cart">Cart</a></li>
                                     <li><a href="/LOGIN">Login</a></li>
                                 </ul>
                             </li>
-                            <%--<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>--%>
-                                <%--<ul role="menu" class="sub-menu">--%>
-                                    <%--<li><a href="/blog">Blog List</a></li>--%>
-                                    <%--<li><a href="/blog-single">Blog Single</a></li>--%>
-                                <%--</ul>--%>
-                            <%--</li>--%>
+
                             <li><a href="/contact-us">Contact</a></li>
                         </ul>
                     </div>
@@ -165,108 +159,15 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a href="/products/by/category/${category.id}">
-                                                <%--<span class="badge pull-right"><i class="fa fa-plus"></i></span>--%>
                                                 ${category.category}
                                         </a>
                                     </h4>
                                 </div>
-                                    <%--<div id="sportswear" class="panel-collapse collapse">--%>
-                                    <%--<div class="panel-body">--%>
-                                    <%--<ul>--%>
-                                    <%--<li><a href="#">Nike </a></li>--%>
-                                    <%--<li><a href="#">Under Armour </a></li>--%>
-                                    <%--<li><a href="#">Adidas </a></li>--%>
-                                    <%--<li><a href="#">Puma</a></li>--%>
-                                    <%--<li><a href="#">ASICS </a></li>--%>
-                                    <%--</ul>--%>
-                                    <%--</div>--%>
-                                    <%--</div>--%>
+
                             </div>
                         </c:forEach>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title">--%>
-                                    <%--<a data-toggle="collapse" data-parent="#accordian" href="#mens">--%>
-                                        <%--<span class="badge pull-right"><i class="fa fa-plus"></i></span>--%>
-                                        <%--Mens--%>
-                                    <%--</a>--%>
-                                <%--</h4>--%>
-                            <%--</div>--%>
-                            <%--<div id="mens" class="panel-collapse collapse">--%>
-                                <%--<div class="panel-body">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="">Fendi</a></li>--%>
-                                        <%--<li><a href="">Guess</a></li>--%>
-                                        <%--<li><a href="">Valentino</a></li>--%>
-                                        <%--<li><a href="">Dior</a></li>--%>
-                                        <%--<li><a href="">Versace</a></li>--%>
-                                        <%--<li><a href="">Armani</a></li>--%>
-                                        <%--<li><a href="">Prada</a></li>--%>
-                                        <%--<li><a href="">Dolce and Gabbana</a></li>--%>
-                                        <%--<li><a href="">Chanel</a></li>--%>
-                                        <%--<li><a href="">Gucci</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
 
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title">--%>
-                                    <%--<a data-toggle="collapse" data-parent="#accordian" href="#womens">--%>
-                                        <%--<span class="badge pull-right"><i class="fa fa-plus"></i></span>--%>
-                                        <%--Womens--%>
-                                    <%--</a>--%>
-                                <%--</h4>--%>
-                            <%--</div>--%>
-                            <%--<div id="womens" class="panel-collapse collapse">--%>
-                                <%--<div class="panel-body">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="">Fendi</a></li>--%>
-                                        <%--<li><a href="">Guess</a></li>--%>
-                                        <%--<li><a href="">Valentino</a></li>--%>
-                                        <%--<li><a href="">Dior</a></li>--%>
-                                        <%--<li><a href="">Versace</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Kids</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Fashion</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Households</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Interiors</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Clothing</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Bags</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="panel panel-default">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h4 class="panel-title"><a href="#">Shoes</a></h4>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    </div><!--/category-productsr-->
+                    </div><!--/category-products-->
 
                     <div class="brands_products"><!--brands_products-->
                         <h2>Brands</h2>
@@ -333,14 +234,6 @@
                             </div>
                         </div>
                     </c:forEach>
-
-
-                    <ul class="pagination">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">&raquo;</a></li>
-                    </ul>
                 </div><!--features_items-->
             </div>
         </div>
