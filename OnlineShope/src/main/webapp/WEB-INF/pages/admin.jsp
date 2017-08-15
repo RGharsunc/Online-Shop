@@ -264,8 +264,9 @@
 
 
                         <div class="form-group col-md-12">
-                            <select name="carouselsPosition" class="form-control">
-                                <label for="carousel">fixed position is after the number below or the first</label>
+                            <label for="carousel">fixed position is after the number below or the first</label>
+
+                            <select id="carousel" name="carouselsPosition" class="form-control">
 
                                 <option class="carousel" value="0">First</option>
                                 <c:forEach items="${carousels}" var="carousel">

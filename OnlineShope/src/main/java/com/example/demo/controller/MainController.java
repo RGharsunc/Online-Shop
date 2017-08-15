@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.*;
 import com.example.demo.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,8 @@ import java.util.List;
 
 @Controller
 public class MainController {
-
+@Value("${online-shop.filedownload.path}")
+private String fileDownloadPath;
 
     @Autowired
   private  ProductService productService;
@@ -57,7 +59,7 @@ public class MainController {
     @ResponseBody
     @RequestMapping(value = "/getImage", method = RequestMethod.GET)
     public byte[] getImageAsByteArray(@RequestParam("filename") String filename) throws Exception {
-        InputStream in = new FileInputStream("D:\\java\\" + filename);
+        InputStream in = new FileInputStream(fileDownloadPath + filename);
         return org.apache.commons.io.IOUtils.toByteArray(in);
     }
 
