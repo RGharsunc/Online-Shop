@@ -11,10 +11,10 @@ import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -90,7 +90,14 @@ public class ProductController {
 
 
 
-
+    @RequestMapping(value = "/admin/product/add", method = RequestMethod.POST)
+    public String addProduct(@ModelAttribute("addProduct") Product product,
+                             @RequestParam("img") MultipartFile image
+    ) throws IOException {
+        Product productWithFile = productService.fileUpload(product, image);
+        productService.addProduct(productWithFile);
+        return "redirect:/admin";
+    }
 
 
     @RequestMapping(value = "/admin/product/delete")

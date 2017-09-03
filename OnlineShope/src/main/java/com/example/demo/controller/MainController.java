@@ -127,7 +127,7 @@ private String fileDownloadPath;
         return "admin";
     }
 
-    @RequestMapping(value = "/LOGIN", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
 
         return "login";
